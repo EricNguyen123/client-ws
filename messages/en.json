@@ -1,0 +1,339 @@
+{
+  "HomePage": {
+    "title": "Home Page",
+    "about": "11",
+    "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>"
+  },
+  "Error": {
+    "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
+    "title": "Something went wrong!"
+  },
+  "ErrorResponse": {
+    "description": "An error occurred while fetching the data.",
+    "title": "Error",
+    "signIn": {
+      "description": "Incorrect email or password.",
+      "title": "Sign in"
+    },
+    "register": {
+      "description": "The email address is already in use.",
+      "title": "Registration"
+    }
+  },
+  "Layout": {
+    "LocaleLayout": {
+      "title": "Home Page"
+    },
+    "LayoutAccount": {
+      "title": "Account"
+    }
+  },
+  "LocaleSwitcher": {
+    "label": "Language",
+    "locale": "{locale, select, en {English} other {Unknown}}"
+  },
+  "Navigation": {
+    "home": "Home",
+    "pathnames": "Pathnames"
+  },
+  "NotFoundPage": {
+    "description": "Please double-check the browser address bar or use the navigation to go to a known page.",
+    "title": "Page not found"
+  },
+  "PageLayout": {
+    
+  },
+  "PathnamesPage": {
+    "description": "<p>The pathnames are internationalized too.</p><p>If you're using the default language English, you'll see <code>/en/pathnames</code> in the browser address bar on this page.</p><p>If you change the locale to German, the URL is localized accordingly (<code>/de/pfadnamen</code>).</p>",
+    "title": "Pathnames"
+  },
+  "ModeToggle": {
+    "label": "Theme",
+    "modes": {
+      "dark": "Dark",
+      "light": "Light",
+      "system": "System"
+    }
+  },
+  "SignMenu": {
+    "signIn": "Sign in",
+    "signOut": "Sign out"
+  },
+  "Register": {
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "submit": "Create account",
+    "title": "Register",
+    "placeholderName": "Enter your name",
+    "placeholderEmail": "Enter your email",
+    "placeholderPassword": "Enter your password",
+    "placeholderConfirmPassword": "Re-enter your password",
+    "haveAccount": "Already have an account?",
+    "signinNow": "Sign in now",
+    "success": {
+      "title": "Success",
+      "description": "Account created successfully!"
+    }
+  },
+  "Signin": {
+    "title": "Sign in",
+    "description": "Sign in with your account",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Sign in",
+    "placeholderEmail": "Enter your email",
+    "placeholderPassword": "Enter your password",
+    "register": "Create new account",
+    "third": {
+      "or": "Or sign in with",
+      "google": "Sign in with Google"
+    }
+  },
+  "BaseMenu": {
+    "signOut": "Sign out",
+    "success": {
+      "title": "Success",
+      "description": "Logout successful."
+    }
+  },
+  "Account": {
+    "profile": {
+      "title": "Profile",
+      "name": "Your Name",
+      "email": "Your Email",
+      "zipcode": "Zip Code",
+      "phone": "Phone",
+      "prefecture": "Prefecture",
+      "city": "City",
+      "street": "Street",
+      "building": "Building",
+      "password": "Password",
+      "forgotPassword": "Forgot Password",
+      "changeYourPassword": "Change your password",
+      "currentPassword": "Current Password",
+      "newPassword": "New Password",
+      "confirmNewPassword": "Confirm New Password",
+      "placeholderYourPassword": "Enter your current password",
+      "placeholderNewPassword": "Enter your new password",
+      "placeholderConfirmNewPassword": "Re-enter your new password",
+      "placeholderYourEmail": "Enter your email",
+      "otp": {
+        "title": "Verify OTP",
+        "timeRemaining": "OTP is valid for",
+        "description": "OTP has been sent to your email. Please enter the OTP you received.",
+        "resendOTP": "Resend OTP"
+      },
+      "titleBox": {
+        "header": "Your account",
+        "subheaderInfo": "Account information",
+        "subheaderChangePassword": "Change password",
+        "subheaderAddress": "Address information"
+      },
+      "edit": {
+        "yourEmail": "Your email",
+        "descriptionYourEmail": "OTP verification code will be sent to your Email",
+        "editProfile": "Edit profile",
+        "labelBtn": "Save changes",
+        "editAddress": "Edit Address",
+        "editPassword": "Edit Password",
+        "labelBtnFP": "Send"
+      },
+      "success": {
+        "title": "Success",
+        "descriptionEditProfile": "Profile updated successfully!",
+        "descriptionEditAddress": "Address updated successfully!",
+        "descriptionEditPassword": "Password updated successfully!",
+        "titleNotice": "Notice",
+        "descriptionForgotPassword": "Check your email",
+        "description201": "Your OTP receiving limit has been reached, please try again later",
+        "description404": "This email does not exist, please re-enter your email.",
+        "description405": "There was an error with OTP please try again.",
+        "descriptionVerifyOTP": "OTP authentication successful",
+        "descriptionOTP401": "Re-enter your OTP",
+        "descriptionOTP402": "Your OTP code has expired"
+      },
+      "error": {
+        "title": "Error",
+        "descriptionEditProfile": "Failed to update profile.",
+        "descriptionEditAddress": "Failed to update address.",
+        "descriptionEditPassword": "Failed to update password.",
+        "descriptionEmailNotMatch": "Email not match or not valid.",
+        "descriptionForgotPassword": "Your OTP request failed.",
+        "descriptionVerifyOTP": "Verify your OTP request failed."
+      }
+    },
+    "bills": {
+      "title": "Bills",
+      "add": "Add new bill",
+      "success": {
+        "title": "Success",
+        "description": "Bill added successfully!"
+      }
+    },
+    "users": {
+      "title": "Users",
+      "name": "Name",
+      "email": "Email",
+      "status": "Status",
+      "role": "Role",
+      "zipcode": "Zip Code",
+      "phone": "Phone",
+      "prefecture": "Prefecture",
+      "city": "City",
+      "street": "Street",
+      "building": "Building",
+      "overView": {
+        "title": "Over View",
+        "description_1": "Number of users",
+        "description_2": "Inactive users",
+        "description_3": "Users visiting",
+        "description_4": "New subscribers"
+      },
+      "success": {
+        "title": "Success",
+        "description": "Get users successfully!",
+        "description_1": "Created user successfully!"
+      },
+      "error": {
+        "title": "Error",
+        "description": "Failed to get list users.",
+        "description_1": "Failed to create user."
+      },
+      "create": {
+        "title": "Create User",
+        "name": "User name",
+        "email": "User email",
+        "password": "User password",
+        "confirmPassword": "User confirm Password",
+        "submit": "Create account",
+        "placeholderName": "Enter user name",
+        "placeholderEmail": "Enter user email",
+        "placeholderPassword": "Enter user password",
+        "placeholderConfirmPassword": "Re-enter user password"
+      }
+    },
+    "categories": {
+      "title": "Categories",
+      "add": "Add new category",
+      "success": {
+        "title": "Success",
+        "description": "Category added successfully!"
+      }
+    },
+    "banners": {
+      "title": "Banners",
+      "add": "Add new banner",
+      "success": {
+        "title": "Success",
+        "description": "Banner added successfully!"
+      }
+    },
+    "campaign": {
+      "title": "Campaign",
+      "success": {
+        "title": "Success",
+        "description": "Campaign created successfully!"
+      }
+    },
+    "products": {
+      "title": "Products",
+      "success": {
+        "title": "Success",
+        "description": "Product created successfully!"
+      }
+    },
+    "shipping": {
+      "title": "Shipping",
+      "success": {
+        "title": "Success",
+        "description": "Shipping method added successfully!"
+      }
+    },
+    "stores": {
+      "title": "Stores",
+      "success": {
+        "title": "Success",
+        "description": "Store added successfully!"
+      }
+    }
+  },
+  "Search": {
+    "placeholder": "Search..."
+  },
+  "Tables": {
+    "filter": "Filter...",
+    "noResults": "No results.",
+    "users": {
+      "filter": "Filter user...",
+      "columns": "Columns",
+      "status": {
+        "title": "Status",
+        "active": "Active",
+        "inactive": "Inactive",
+        "all": "All"
+      },
+      "more": {
+        "add": "Add user",
+        "delete": "Delete users"
+      },
+      "delete": {
+        "title": "Delete users",
+        "title_1": "Delete user",
+        "cancel": "Cancel",
+        "delete": "Delete",
+        "confirm": "these users",
+        "confirm_1": "these user",
+        "error": {
+          "title": "Error",
+          "description": "Failed to delete users.",
+          "description_1": "Failed to delete user."
+        },
+        "success": {
+          "title": "Success",
+          "description": "Users deleted successfully.",
+          "description_1": "User deleted successfully."
+        },
+        "warning": {
+          "title": "Attention",
+          "description": "Please select the object you want to delete!"
+        }
+      },
+      "actions": {
+        "title": "Actions",
+        "edit": "Edit information",
+        "delete": "Delete user",
+        "view": "View details",
+        "userId": "Copy user ID"
+      }
+    }
+
+  },
+  "Charts": {
+    "title": "Users",
+    "noResults": "No results",
+    "activer": {
+      "title": "Users",
+      "activeLabel": "Active",
+      "inactiveLabel": "Inactive"
+    },
+    "visiter": {
+      "title": "Users",
+      "onlineLabel": "Visited",
+      "offlineLabel": "Offline"
+    },
+    "subscribers": {
+      "title": "Subscribers",
+      "newLabel": "New",
+      "oldLabel": "Old"
+    }
+  },
+  "Delete": {
+    "title": "Delete",
+    "description": "Are you sure you want to delete",
+    "description_1": "?",
+    "cancel": "Cancel",
+    "delete": "Delete"
+  }
+}
