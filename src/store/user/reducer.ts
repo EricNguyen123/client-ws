@@ -26,10 +26,19 @@ export default function userReducer(
     }
 
     case types.UPDATE_ACCOUNT_SUCCESS: {
-      return {
+      return state.userInfo.id === action.payload.data.id ? {
         ...state,
         loading: false,
         userInfo: action.payload.data || undefined,
+      } : {
+        ...state,
+        loading: false,
+        pages: {
+          ...state.pages,
+          users: state.pages.users.map((user: any) =>
+            user.id === action.payload.data.id? {...user,...action.payload.data } : user
+          ),
+        }
       };
     }
 

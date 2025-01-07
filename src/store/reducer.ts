@@ -10,6 +10,8 @@ import authReducer from "./auth/reducer";
 import persistReducer from "redux-persist/lib/persistReducer";
 import storage from "@/utils/customStorage";
 import userReducer from "./user/reducer";
+import categoryReducer from "./categories/reducer";
+import bannerReducer from "./banners/reducer";
 
 const rootPersistConfig = {
   key: "root",
@@ -28,6 +30,8 @@ const authPersistConfig = {
 const reducers = combineReducers({
   auth: persistReducer(authPersistConfig, authReducer),
   user: userReducer,
+  category: categoryReducer,
+  banner: bannerReducer,
 });
 
 type RootState = ReturnType<typeof reducers>;

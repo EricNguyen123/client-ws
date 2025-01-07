@@ -77,12 +77,12 @@ export default function authReducer(
     }
 
     case types.UPDATE_AUTH: {
-      return {
+      return state.userInfo.id === action.payload.data.id ? {
         ...state,
         loading: false,
         userInfo: action.payload.data || undefined,
         authenticated: true,
-      };
+      } : { ...state, loading: false };
     }
 
     case types.FORGOT_PASSWORD: {

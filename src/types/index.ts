@@ -100,5 +100,26 @@ export type StatisticalUsersProps = {
   usersNewSubscribers: number;
 }
 
+export type CreateCategoriesProps = {
+  name: string;
+  parentCategoryId: string;
+  subCategoryIds: string[];
+}
+
+export type UpdateCategoriesProps = {
+  id: string;
+  data: CreateCategoriesProps;
+}
+
 export type ChartDataProps = { [key: string]: string | number }[]
 
+export type CreateBannerProps = {
+  image: File;
+} & UpdateBannerProps
+
+export interface UpdateBannerProps {
+  descriptions: string;
+  orderNumber: string;
+  startDate: Date;
+  endDate: Date;
+}

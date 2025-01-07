@@ -3,7 +3,7 @@
 
 import { useTranslations } from 'next-intl';
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import BoxInfoItem from './BoxInfoItem';
 import { BoxEdit } from './BoxEdit';
 
@@ -13,49 +13,48 @@ import { Check, PencilOff } from 'lucide-react';
 import { OptionsBaseInfo } from '@/types';
 import { updateAccount } from '@/store/user/actions';
 
-export default function EditAddress() {
+export default function EditAddress({ userSelector }: { userSelector: any }) {
   const t = useTranslations('Account');
   const [optionsAddress, setOptionsAddress] = useState<OptionsBaseInfo[]>([])
   const dispatch = useDispatch();
-  const userSelector = useSelector(({ user } : any) => user);
   const { toast } = useToast()
 
   useEffect(() => {
-    if (userSelector.userInfo) {
+    if (userSelector) {
       setOptionsAddress([
         {
           name: t('profile.zipcode'),
-          content: userSelector.userInfo?.zipcode
+          content: userSelector?.zipcode
         },
         {
           name: t('profile.phone'),
-          content: userSelector.userInfo?.phone
+          content: userSelector?.phone
         },
         {
           name: t('profile.prefecture'),
-          content: userSelector.userInfo?.prefecture
+          content: userSelector?.prefecture
         },
         {
           name: t('profile.city'),
-          content: userSelector.userInfo?.city
+          content: userSelector?.city
         },
         {
           name: t('profile.street'),
-          content: userSelector.userInfo?.street
+          content: userSelector?.street
         },
         {
           name: t('profile.building'),
-          content: userSelector.userInfo?.building
+          content: userSelector?.building
         }
       ])
     }
-  }, [userSelector.userInfo, t])
+  }, [userSelector, t])
 
   const handleChangesAddressEdit = (values: { [key: string]: string }) => {
     dispatch(updateAccount({ 
       data: {
-        ...userSelector.userInfo,
-        id: userSelector.userInfo?.id,
+        ...userSelector,
+        id: userSelector?.id,
         zipcode: values[t('profile.zipcode')],
         phone: values[t('profile.phone')],
         prefecture: values[t('profile.prefecture')],

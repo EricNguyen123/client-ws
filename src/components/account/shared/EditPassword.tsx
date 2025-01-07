@@ -3,7 +3,7 @@
 
 import { useTranslations } from 'next-intl';
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import BoxInfoItem from './BoxInfoItem';
 import { BoxEdit } from './BoxEdit';
 import { changePassword } from '@/store/user/actions';
@@ -12,8 +12,9 @@ import { useToast } from '@/hooks/use-toast';
 import { Check, PencilOff } from 'lucide-react';
 import { OptionsBaseInfo } from '@/types';
 import ForgotPassword from './ForgotPassword';
+import EditForgotPassword from './EditForgotPassword';
 
-export default function EditPassword() {
+export default function EditPassword({ userSelector, actions = 'all' }: { userSelector: any, actions?: 'all' | 'password' | 'forgot' }) {
   const t = useTranslations('Account');
   const [optionsPassword, setOptionsPassword] = useState<OptionsBaseInfo[]>([])
   const optionsChangePassword: OptionsBaseInfo[] = [
@@ -34,11 +35,10 @@ export default function EditPassword() {
     },
   ]
   const dispatch = useDispatch();
-  const userSelector = useSelector(({ user } : any) => user);
   const { toast } = useToast()
 
   useEffect(() => {
-    setOptionsPassword([
+    setOptionsPassword(actions === 'all' ? [
       {
         name: t('profile.password'),
         content: editPasswordLink,
@@ -48,14 +48,27 @@ export default function EditPassword() {
         name: t('profile.forgotPassword'),
         content: <ForgotPassword/>,
       },
+    ] : actions === 'password' ? [
+      {
+        name: t('profile.password'),
+        content: editPasswordLink,
+        type: "password",
+      }
+    ] : 
+    [
+      {
+        name: t('profile.password'),
+        content: <EditForgotPassword openDialog={false} userId={userSelector?.id}/>,
+        type: "password",
+      }
     ])
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [userSelector])
 
   const handleChangesPasswordEdit = (values: { [key: string]: string }) => {
     dispatch(changePassword({ 
       data: {
-        id: userSelector.userInfo?.id,
+        id: userSelector?.id,
         currentPassword: values[t('profile.currentPassword')],
         newPassword: values[t('profile.newPassword')],
         confirmPassword: values[t('profile.confirmNewPassword')],
@@ -98,7 +111,7 @@ export default function EditPassword() {
                       icon={<span className='text-base font-medium'>{t('profile.changeYourPassword')}</span>}
                       variantBtn={"link"}
                     />
-                    
+
   return (
     <BoxInfoItem 
             editComponent={editPasswordComponent} 

@@ -67,7 +67,20 @@ export default {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+			keyframes: {
+        'fade-in-down': {
+          '0%': { opacity: '0', transform: 'scale(0.95)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
+      },
+      animation: {
+        'fade-in-down': 'fade-in-down 0.3s ease-out',
+      },
+			zIndex: {
+        '100': '100',
+				'999': '999',
+      }
   	}
   },
   plugins: [

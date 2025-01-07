@@ -4,12 +4,16 @@ import {
   AccountProps, 
   ChangeForgotPasswordProps, 
   ChangePasswordProps, 
+  CreateBannerProps, 
+  CreateCategoriesProps, 
   ForgotPasswordProps, 
   LoginProps, 
   LogoutProps, 
   RegisterProps, 
   SearchProps, 
   StatisticalUsersProps, 
+  UpdateBannerProps, 
+  UpdateCategoriesProps, 
   UserProps, 
   VerifyOTPProps 
 } from ".";
@@ -37,6 +41,25 @@ export type UserState = {
   };
   statistical: StatisticalUsersProps | undefined;
 }
+
+export type CategoriesState = {
+  loading: boolean;
+  pages: {
+    categories: any | undefined;
+    totalUsers: number;
+    currentPage: number;
+  };
+  categories: any | undefined;
+};
+
+export type BannersState = {
+  loading: boolean;
+  pages: {
+    banners: any | undefined;
+    totalBanners: number;
+    currentPage: number;
+  };
+};
 
 export type RegisterData = {
   data: RegisterProps;
@@ -107,6 +130,51 @@ export type DeleteUsersData = {
 
 export type DeleteUserData = {
   data: AccountProps;
+  setError: (error: any) => void;
+  setSuccess: (success: any) => void;
+}
+
+export type DeleteCategoryData = DeleteUserData
+
+export type CategoriesPaginationData = {
+  data: SearchProps;
+  setError: (error: any) => void;
+  setSuccess: (success: any) => void;
+}
+
+export type CreateCategoriesData = {
+  data: CreateCategoriesProps;
+  setError: (error: any) => void;
+  setSuccess: (success: any) => void;
+}
+
+export type GetCategoriesData = {
+  setError: (error: any) => void;
+  setSuccess: (success: any) => void;
+}
+
+export type UpdateCategoriesData = {
+  data: UpdateCategoriesProps;
+  setError: (error: any) => void;
+  setSuccess: (success: any) => void;
+}
+
+export type CreateBannerData = {
+  data: CreateBannerProps;
+  setError: (error: any) => void;
+  setSuccess: (success: any) => void;
+}
+
+export type BannersPaginationData = {
+  data: SearchProps;
+  setError: (error: any) => void;
+  setSuccess: (success: any) => void;
+}
+
+export type DeleteBannerData = DeleteUserData
+
+export type UpdateBannerData = {
+  data: UpdateBannerProps & AccountProps;
   setError: (error: any) => void;
   setSuccess: (success: any) => void;
 }

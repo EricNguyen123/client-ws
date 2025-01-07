@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { Search } from 'lucide-react';
 import { Button } from '../ui/button';
 
-const searchVariants = cva(
+const inputVariants = cva(
   "w-full",
   {
     variants: {
@@ -26,8 +26,24 @@ const searchVariants = cva(
   }
 );
 
+const searchVariants = cva(
+  "w-full items-center relative flex",
+  {
+    variants: {
+      size: {
+        xs: "lg:w-[260px]",
+        sm: "lg:w-[320px]",
+        lg: "lg:w-[380px]",
+        auto: "lg:w-full",
+      },
+    },
+    defaultVariants: {
+      size: "lg",
+    },
+  }
+)
 
-interface BaseSearchProps extends VariantProps<typeof searchVariants> {
+interface BaseSearchProps extends VariantProps<typeof searchVariants>, VariantProps<typeof inputVariants> {
   placeholder?: string;
   value?: string;
   onChange?: (value: string) => void;
@@ -35,29 +51,37 @@ interface BaseSearchProps extends VariantProps<typeof searchVariants> {
   variant?: "default" | "search";
 }
 
-export default function BaseSearch({ placeholder, value, onChange, className, variant }: BaseSearchProps) {
+export default function BaseSearch({ placeholder, value, onChange, className, variant = "default", size }: BaseSearchProps) {
   const t = useTranslations('Search');
   const [newValue, setNewValue] = useState<string>(value ? value : "");
   const debouncedValue = useDebounce(newValue, 500); 
 
   useEffect(() => {
-    if (onChange) {
+    if (variant && variant === "default" && onChange) {
       onChange(debouncedValue);
     }
   }, [debouncedValue]);
 
   return (
-    <div className="w-full lg:w-[380px] items-center relative flex">
+    <div className={cn(searchVariants({ size }))}>
       <Input
           placeholder={placeholder || t('placeholder')}
           value={newValue}
           onChange={(event) =>
             setNewValue(event.target.value)
           }
-          className={cn(searchVariants({ variant, className }))}
+          className={cn(inputVariants({ variant, className }))}
         />
       {variant === 'search' && (
-        <Button variant={"ghost"} className="!size-9 !p-2 rounded-full absolute right-0 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer hover:border hover:border-gray-300">
+        <Button 
+          variant={"ghost"} 
+          className="!size-9 !p-2 rounded-full absolute right-0 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer hover:border hover:border-gray-300"
+          onClick={() => {
+            if (onChange) {
+              onChange(debouncedValue);
+            }
+          }}
+        >
           <Search  />
         </Button>
       )}

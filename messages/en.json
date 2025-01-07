@@ -112,6 +112,7 @@
       "password": "Password",
       "forgotPassword": "Forgot Password",
       "changeYourPassword": "Change your password",
+      "changeUserPassword": "Change user password",
       "currentPassword": "Current Password",
       "newPassword": "New Password",
       "confirmNewPassword": "Confirm New Password",
@@ -119,6 +120,13 @@
       "placeholderNewPassword": "Enter your new password",
       "placeholderConfirmNewPassword": "Re-enter your new password",
       "placeholderYourEmail": "Enter your email",
+      "placeholderSelectRole": "Role user",
+      "labelSelectRole": "Active Role",
+      "status": "Status",
+      "active": "Active",
+      "inactive": "Inactive",
+      "nullActive": "Not Data",
+      "role": "Role",
       "otp": {
         "title": "Verify OTP",
         "timeRemaining": "OTP is valid for",
@@ -129,7 +137,8 @@
         "header": "Your account",
         "subheaderInfo": "Account information",
         "subheaderChangePassword": "Change password",
-        "subheaderAddress": "Address information"
+        "subheaderAddress": "Address information",
+        "subheaderActiveUser": "Active user"
       },
       "edit": {
         "yourEmail": "Your email",
@@ -152,7 +161,9 @@
         "description405": "There was an error with OTP please try again.",
         "descriptionVerifyOTP": "OTP authentication successful",
         "descriptionOTP401": "Re-enter your OTP",
-        "descriptionOTP402": "Your OTP code has expired"
+        "descriptionOTP402": "Your OTP code has expired",
+        "descriptionStatus": "Status updated successfully",
+        "descriptionRole": "Role updated successfully"
       },
       "error": {
         "title": "Error",
@@ -161,7 +172,9 @@
         "descriptionEditPassword": "Failed to update password.",
         "descriptionEmailNotMatch": "Email not match or not valid.",
         "descriptionForgotPassword": "Your OTP request failed.",
-        "descriptionVerifyOTP": "Verify your OTP request failed."
+        "descriptionVerifyOTP": "Verify your OTP request failed.",
+        "descriptionStatus": "Update status failed",
+        "descriptionRole": "Update role failed"
       }
     },
     "bills": {
@@ -174,6 +187,8 @@
     },
     "users": {
       "title": "Users",
+      "titleInfo": "Information",
+      "headerInfo": "Information user",
       "name": "Name",
       "email": "Email",
       "status": "Status",
@@ -217,17 +232,121 @@
     "categories": {
       "title": "Categories",
       "add": "Add new category",
+      "edit": "Edit category",
+      "btnAdd": "Add",
+      "btnSave": "Save",
+      "name": "Name",
+      "newName": "New Name",
+      "placeholderSearch": "Search category...",
+      "placeholderName": "Enter category name...",
+      "placeholderNewName": "Enter new category name...",
+      "titleParent": "Parent Categories",
+      "titleChild": "Child Categories",
+      "delete": {
+        "title": "Delete categories",
+        "title_1": "Delete category",
+        "title_2": "Remove parent directory",
+        "cancel": "Cancel",
+        "delete": "Delete",
+        "confirm": "these categories",
+        "confirm_1": "these category",
+        "confirm_2": "from parent directory",
+        "error": {
+          "title": "Error",
+          "description": "Failed to delete categories.",
+          "description_1": "Failed to delete category.",
+          "description_2": "Delete from parent directory failed."
+        },
+        "success": {
+          "title": "Success",
+          "description": "Categories deleted successfully.",
+          "description_1": "Category deleted successfully.",
+          "description_2": "Removed from parent list successfully."
+        },
+        "warning": {
+          "title": "Attention",
+          "description": "Please select the object you want to delete!"
+        }
+      },
+      "actions": {
+        "title": "Actions",
+        "edit": "Edit category",
+        "delete": "Delete category",
+        "create": "Create category"
+      },
       "success": {
         "title": "Success",
-        "description": "Category added successfully!"
+        "description": "Category added successfully!",
+        "description_1": "Category updated successfully!",
+        "description_2": "Category deleted successfully!",
+        "description_3": "Get categories successfully!"
+      },
+      "error": {
+        "title": "Error",
+        "description": "Failed to get list categories.",
+        "description_1": "Failed to create category.",
+        "description_2": "Failed to update category.",
+        "description_3": "Failed to delete category."
+      },
+      "warning": {
+        "title": "Attention",
+        "description": "You have not entered a name for the category."
       }
     },
     "banners": {
       "title": "Banners",
       "add": "Add new banner",
+      "desciptions": "Description",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "numberOrder": "Number Order",
+      "placeholderSelect": "Select Order Number",
+      "placeholderSearch": "Search banner...",
+      "title_1": "Create new banner",
+      "title_2": "Edit banner",
+      "title_3": "Delete banner",
+      "title_4": "List banners",
+      "inImage": "Click or drag file to upload",
+      "delete": {
+        "title": "Delete banner",
+        "cancel": "Cancel",
+        "delete": "Delete",
+        "confirm": "that banner",
+        "error": {
+          "title": "Error",
+          "description": "Failed to delete banner."
+        },
+        "success": {
+          "title": "Success",
+          "description": "Banner deleted successfully."
+        }
+      },
       "success": {
         "title": "Success",
-        "description": "Banner added successfully!"
+        "description": "Banner added successfully!",
+        "description_1": "Banner updated successfully!",
+        "description_2": "Banner deleted successfully!",
+        "description_3": "Get banners successfully!"
+      },
+      "error": {
+        "title": "Error",
+        "description": "Failed to get list banners.",
+        "description_1": "Failed to create banner.",
+        "description_2": "Failed to update banner.",
+        "description_3": "Failed to delete banner."
+      },
+      "button": {
+        "add": "Add",
+        "edit": "Edit",
+        "delete": "Delete",
+        "cancel": "Cancel",
+        "save": "Save",
+        "submit": "Submit"
+      },
+      "actions": {
+        "title": "Actions",
+        "edit": "Edit banner",
+        "delete": "Delete banner"
       }
     },
     "campaign": {
@@ -335,5 +454,12 @@
     "description_1": "?",
     "cancel": "Cancel",
     "delete": "Delete"
+  },
+  "Calender": {
+    "notice": "A date is required.",
+    "notice_1": "The start date field is required.",
+    "notice_2": "The end date field is required.",
+    "placeholder": "Pick a date",
+    "btnSub": "Submit"
   }
 }

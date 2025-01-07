@@ -1,6 +1,7 @@
 import { Props } from '@/types';
 import { getTranslations } from 'next-intl/server';
 import React from 'react'
+import UserLayout from './UserLayout';
 
 export async function generateMetadata({
   params
@@ -14,8 +15,8 @@ export async function generateMetadata({
 }
 
 export interface LayoutUsersProps extends Props {
-  overview: React.ReactNode;
-  statistical: React.ReactNode;
+  overview?: React.ReactNode;
+  statistical?: React.ReactNode;
 }
 
 
@@ -25,12 +26,8 @@ export default function LayoutUsers({
   statistical,
 }: LayoutUsersProps) {
   return (
-    <div className='w-full h-full flex flex-col items-start p-4'>
-      <div className='w-full h-auto items-center grid grid-flow-row lg:grid-cols-10 gap-2 pb-20'>
-        <div className='col-span-full lg:col-span-3 h-full'>{overview}</div>
-        <div className='col-span-full lg:col-span-7 h-full'>{statistical}</div>
-      </div>
+    <UserLayout overview={overview} statistical={statistical}>
       {children}
-    </div>
+    </UserLayout>
   )
 }

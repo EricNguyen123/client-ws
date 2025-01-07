@@ -12,11 +12,15 @@ import { useDispatch } from 'react-redux';
 import { useToast } from '@/hooks/use-toast';
 import ContentDelete from '@/components/delete/ContentDelete';
 import { deleteUser } from '@/store/user/actions';
+import { useRouter } from '@/i18n/routing';
+import config from '@/config';
 
 export default function actionsUserTable(i: any): OptionsProps[] {
   const dispatch = useDispatch()
   const { toast } = useToast();
   const tTable = useTranslations('Tables');
+  const routes = useRouter();
+
   const handleDelete = (e: any) => {
     dispatch(deleteUser({
       data: { id: i },
@@ -53,6 +57,7 @@ export default function actionsUserTable(i: any): OptionsProps[] {
     {
       icon: <UserRoundCog />,
       content: tTable('users.actions.view'),
+      handle: () => {routes.push(`${config.routes.private.information}/${i}`)}
     },
     {
       icon: <Trash2 />,

@@ -3,7 +3,7 @@
 
 import { useTranslations } from 'next-intl';
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import BoxInfoItem from './BoxInfoItem';
 import { BoxEdit } from './BoxEdit';
 import { updateAccount } from '@/store/user/actions';
@@ -12,11 +12,10 @@ import { useToast } from '@/hooks/use-toast';
 import { Check, PencilOff } from 'lucide-react';
 import { OptionsBaseInfo } from '@/types';
 
-export default function EditInfo() {
+export default function EditInfo({ userSelector }: { userSelector: any }) {
   const t = useTranslations('Account');
   const [options, setOptions] = useState<OptionsBaseInfo[]>([])
   const dispatch = useDispatch();
-  const userSelector = useSelector(({ user } : any) => user.userInfo);
   const { toast } = useToast()
 
   useEffect(() => {

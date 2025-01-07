@@ -39,3 +39,17 @@ export const calculateTotalPages = (totalRecords: number, recordsPerPage: number
   }
   return Math.ceil(totalRecords / recordsPerPage);
 }
+
+export const validateImageUrl = async ({ url, defaultUrl }: {url: string, defaultUrl: string}): Promise<string> => {
+  try {
+    const response = await fetch(url, { method: 'HEAD' });
+    if (response.ok) return url;
+    return defaultUrl;
+  } catch {
+    return defaultUrl;
+  }
+};
+
+export const numbering = (page: number, index: number): number => {
+  return (page - 1) * LIMIT + index + 1;
+}

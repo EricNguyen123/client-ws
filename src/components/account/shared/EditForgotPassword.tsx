@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 
 import { useTranslations } from 'next-intl';
@@ -12,9 +13,10 @@ import { changeForgotPassword } from '@/store/auth/actions';
 
 type EditForgotPasswordProps = {
   openDialog: boolean;
+  userId?: boolean;
 }
 
-export default function EditForgotPassword({ openDialog }: EditForgotPasswordProps) {
+export default function EditForgotPassword({ openDialog, userId }: EditForgotPasswordProps) {
   const t = useTranslations('Account');
   const optionsChangePassword: OptionsBaseInfo[] = [
     {
@@ -35,7 +37,7 @@ export default function EditForgotPassword({ openDialog }: EditForgotPasswordPro
   const handleChangesPasswordEdit = (values: { [key: string]: string }) => {
     dispatch(changeForgotPassword({ 
       data: {
-        id: authSelector.otp?.userId,
+        id: userId || authSelector.otp?.userId,
         newPassword: values[t('profile.newPassword')],
         confirmPassword: values[t('profile.confirmNewPassword')],
       }, 
@@ -69,7 +71,9 @@ export default function EditForgotPassword({ openDialog }: EditForgotPasswordPro
                       labelBtn={t("profile.edit.labelBtn")}
                       onSubmit={handleChangesPasswordEdit}
                       openDialog={openDialog}
-                      useTrigger={false}
+                      useTrigger={userId ? true : false}
+                      icon={<span className='text-base font-medium'>{t('profile.changeUserPassword')}</span>}
+                      variantBtn={"link"}
                     />}
     </>
   )

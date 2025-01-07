@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { useState } from 'react'
 import { useTranslations } from 'next-intl';
 import { BoxEdit } from './BoxEdit';
 import { OptionsBaseInfo } from '@/types';

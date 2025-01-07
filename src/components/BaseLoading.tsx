@@ -9,11 +9,12 @@ export default function BaseLoading() {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const authLoading = useSelector(({ auth } : any) => auth.loading);
   const userLoading = useSelector(({ user } : any) => user.loading);
+  const categoryLoading = useSelector(({ category } : any) => category.loading);
 
   useEffect(() => {
-    const check = authLoading || userLoading
+    const check = authLoading || userLoading || categoryLoading
     setIsLoading(check)
-  }, [authLoading, userLoading])
+  }, [authLoading, userLoading, categoryLoading])
 
   return (
     <Loading loading={isLoading}/>

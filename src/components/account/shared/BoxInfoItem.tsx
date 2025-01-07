@@ -33,13 +33,13 @@ export default function BoxInfoItem({
       <div className='flex grid-flow-row grid-cols-2 gap-6'>
         <div className='flex flex-col items-center justify-center grid-flow-row gap-2'>
           {options && options.map((item, index) => 
-            <span key={index} className='w-full h-full flex items-center justify-end text-base font-semibold'>
+            <span key={index} className='w-full h-9 flex items-center justify-end text-base font-semibold'>
               {item.name ? item.name : symbols.inValid}
             </span>)}
         </div>
         <div className='flex flex-col items-center justify-center grid-flow-row gap-2'>
           {options && options.map((item, index) => 
-            <span key={index} className='w-full h-full flex items-center justify-start text-base font-medium'>
+            <span key={index} className='w-full h-9 flex items-center justify-start text-base font-medium'>
               {item.content ? item.content : symbols.inValid}
             </span>)}
         </div>

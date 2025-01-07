@@ -49,14 +49,18 @@ export default function ManagerList() {
         >
           {t('users.title')}
         </ItemMenu>
-        <DropdownMenuItem>
-          <List className='mr-2'/>
-          Categories
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <GalleryVertical className='mr-2'/>
-          Banners
-        </DropdownMenuItem>
+        <ItemMenu 
+          icon={<List className='mr-2'/>} 
+          route={config.routes.private.categories}
+        >
+          {t('categories.title')}
+        </ItemMenu>
+        <ItemMenu 
+          icon={<GalleryVertical className='mr-2'/>} 
+          route={config.routes.private.banners}
+        >
+          {t('banners.title')}
+        </ItemMenu>
         <DropdownMenuItem>
           <Telescope className='mr-2'/>
           Campaign

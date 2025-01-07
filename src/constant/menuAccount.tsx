@@ -14,7 +14,7 @@ import {
 } from "lucide-react"
 import { useTranslations } from "next-intl"
 
-const Options = () => {
+export const Options = () => {
   return (
     <div className="transition-all transform rotate-0">
       <ChevronRight className="w-4 h-4"/>
@@ -22,7 +22,7 @@ const Options = () => {
   )
 }
 
-const OptionsActive = () => {
+export const OptionsActive = () => {
   return (
     <div className="transition-all transform rotate-90">
       <ChevronRight className="w-4 h-4"/>
@@ -67,7 +67,7 @@ export const menuAccount = () => {
       optionActive: undefined,
       icon: <List className='w-4 h-4'/>,
       title: <span className="text-sm">{t('categories.title')}</span>,
-      href: "a",
+      href: config.routes.private.categories,
       items: [],
     },
     {
@@ -76,7 +76,7 @@ export const menuAccount = () => {
       optionActive: undefined,
       icon: <GalleryVertical className='w-4 h-4'/>,
       title: <span className="text-sm">{t('banners.title')}</span>,
-      href: "a",
+      href: config.routes.private.banners,
       items: [],
     },
     {
