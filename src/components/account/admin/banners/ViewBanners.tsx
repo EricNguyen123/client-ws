@@ -17,6 +17,7 @@ import { format } from 'date-fns';
 import { useTranslations } from 'next-intl';
 import ActionsBanners from './ActionsBanners';
 import CardView from '../../shared/CardView';
+import NoData from '@/components/NoData';
 
 export default function ViewBanners({ search }: { search: string }) {
   const bannersSelector = useSelector(({ banner } : any) => banner.pages);
@@ -92,7 +93,7 @@ export default function ViewBanners({ search }: { search: string }) {
 
   return (
     <div className='w-full'>
-      {dataIn.length > 0 && 
+      {dataIn.length > 0 ? 
         <div className='w-full flex flex-col items-center justify-center space-y-4'>
           {dataIn.map((data, index) => 
             <Card key={index} className='w-full !p-0'>
@@ -157,7 +158,8 @@ export default function ViewBanners({ search }: { search: string }) {
               </CardContent>
             </Card>
           )}
-        </div>
+        </div> : 
+        <NoData width='35' height='35'/>
       }
       {totalPages > 1 && 
         <BasePagination pages={totalPages} chagneData={handlePageChange} currentPage={currentPage}/>}

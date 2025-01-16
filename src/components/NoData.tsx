@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function NoData({ width = "15", height = "15" }: { width?: string, height?: string }) {
   return (
-    <div className='w-full flex items-center justify-center'>
+    <div className='w-full h-20 flex items-center justify-center border-[1px] rounded-md border-accent shadow-sm'>
       <svg 
         width={width} 
         height={height} 

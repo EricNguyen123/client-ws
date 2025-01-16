@@ -74,7 +74,7 @@ export default function BoxSeclect({ defaultValue, onChange, title, data, search
           ))}
           {(!dataBox || dataBox.length === 0) && 
           <div className='w-full flex items-center justify-center'>
-            <span className='text-gray-400'>
+            <span className='text-gray-400 w-full'>
               <NoData width='35' height='35'/>
             </span>
           </div>}
