@@ -16,7 +16,7 @@ export function BaseMenu() {
       <DropdownMenuTrigger asChild className="relative">
         <Button variant="link"><Ellipsis /></Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56 absolute right-[-60px]">
+      <DropdownMenuContent className="w-56 absolute lg:right-[-60px] right-[-30px]">
         <DropdownMenuGroup>
           <BaseLocale/>
           <ModeToggle/>

@@ -17,7 +17,7 @@ export default function LayoutCategories({
   children,
 }: Props) {
   return (
-      <div className='w-full h-full flex flex-col items-start p-4'>
+      <div className='w-full h-max flex flex-col items-start p-4'>
         {children}
       </div>
   )

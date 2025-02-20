@@ -17,7 +17,7 @@ export default function LayoutProfile({
   children
 }: Props) {
   return (
-    <div className='w-full h-full flex items-start p-4'>
+    <div className='w-full h-max flex items-start p-4'>
     {children}
     </div>
   )

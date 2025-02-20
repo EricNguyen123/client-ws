@@ -90,7 +90,7 @@ export function BoxEdit({
           {!icon ? <SquarePen /> : icon}
         </Button>
       </DialogTrigger>}
-      <DialogContent className="w-fit min-w-[425px] sm:max-w-[max-content] max-w-full">
+      <DialogContent className="w-full sm:w-fit sm:min-w-[425px] sm:max-w-[max-content] max-w-full">
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
           <DialogDescription>{description}</DialogDescription>

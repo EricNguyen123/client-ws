@@ -17,7 +17,7 @@ export default function LayoutInfomation({
   children,
 }: Props) {
   return (
-    <div className='w-full h-full flex flex-col items-start'>
+    <div className='w-full h-max flex flex-col items-start'>
       {children}
     </div>
   )

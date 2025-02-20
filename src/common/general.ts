@@ -32,3 +32,14 @@ export enum ErrorNumber {
   InvalidValue = 405,
   ServerError = 500,
 }
+
+export enum StatusProductsEnum {
+  OutOfBusiness = 0,
+  OnSale = 1,
+  OutOfStock = 2,
+}
+
+export enum KeyTypes {
+  Product = 'product',
+  Banner = 'banner',
+}

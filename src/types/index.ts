@@ -123,3 +123,26 @@ export interface UpdateBannerProps {
   startDate: Date;
   endDate: Date;
 }
+
+export interface CreateProductProps {
+  name: string,
+  code: string,
+  price: number,
+  quantity: number,
+  quantity_alert: number,
+  order_unit: number,
+  description?: string | undefined,
+  status: number,
+  multiplication_rate: number,
+  discount: number,
+}
+
+export interface UploadImageProps {
+  image: File;
+  itemId: string;
+  id: number;
+}
+
+export interface CreateColorProps {
+  color_code: string;
+}

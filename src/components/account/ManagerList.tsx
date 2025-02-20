@@ -65,10 +65,12 @@ export default function ManagerList() {
           <Telescope className='mr-2'/>
           Campaign
         </DropdownMenuItem>
-        <DropdownMenuItem>
-          <Boxes className='mr-2'/>
-          Products
-        </DropdownMenuItem>
+        <ItemMenu 
+          icon={<Boxes className='mr-2'/>} 
+          route={config.routes.private.products}
+        >
+          {t('products.title')}
+        </ItemMenu>
         <DropdownMenuItem>
           <Truck className='mr-2'/>
           Shipping

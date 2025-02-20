@@ -3,6 +3,8 @@ import authSagas from "./auth/saga";
 import userSaga from "./user/saga";
 import categorySaga from "./categories/saga";
 import bannerSaga from "./banners/saga";
+import productSaga from "./products/saga";
+import colorSaga from "./colors/saga";
 
 export default function* rootSaga() {
   yield all([
@@ -10,5 +12,7 @@ export default function* rootSaga() {
     userSaga(),
     categorySaga(),
     bannerSaga(),
+    productSaga(),
+    colorSaga(),
   ]);
 }

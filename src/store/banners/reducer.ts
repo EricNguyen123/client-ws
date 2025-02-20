@@ -11,7 +11,7 @@ const initState = {
   },
 };
 
-export default function categoriesReducer(
+export default function bannersReducer(
   state: BannersState = initState,
   action: Action
 ) {

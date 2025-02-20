@@ -23,8 +23,11 @@ export type GroupSidebarProps = {
 const Item = ({ icon, title, href, option, optionActive, items }: OptionMenu) => {
   const [open, setOpen] = useState<boolean>(false);
   const routes = useRouter();
-  const handleClick = () => {
-    setOpen(!open)
+  const handleClick = (e: React.MouseEvent) => {
+    if (items.length > 0) {
+      e.stopPropagation();
+      setOpen(!open);
+    }
     if (href && (!option || !optionActive)) {
       routes.push(href)
     }

@@ -20,7 +20,7 @@ export default function BoxInfoItem({
   deleteComponent 
 }: BoxInfoItemProps) {
   return (
-    <div className={cn("w-[60%]", className)}>
+    <div className={cn("w-full sm:w-[60%]", className)}>
       <div className='w-full flex items-start justify-start flex-col mb-5'>
         <div className='w-full flex items-center justify-between mb-2'>
           <span className='text-base font-bold'>{title}</span>

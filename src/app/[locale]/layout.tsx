@@ -33,7 +33,7 @@ export default async function LocaleLayout({
   return (
     <BaseLayout locale={locale}>
       <BaseLoading/>
-      <div className='w-full h-screen box-border border overflow-scroll p-2 pb-12
+      <div className='w-full flex-1 box-border border overflow-scroll p-2 pb-12
                       lg:px-6 lg:py-5 xl:px-20 xl:py-5 scrollbar-no-hover-bg'>
         {children}
       </div>

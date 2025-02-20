@@ -1,5 +1,4 @@
 import BaseSidebar from '@/components/account/sidebar/BaseSidebar';
-import CustomSidebar from '@/components/account/sidebar/CustomSidebar';
 import ScrollToTopButton from '@/components/float-button/ScrollToTopButton';
 import { menuAccount } from '@/constant/menuAccount';
 import { Props } from '@/types';
@@ -26,9 +25,9 @@ export default function LayoutAccount({
       <div className='h-full hidden md:flex flex-col items-center justify-center duration-200'>
         <BaseSidebar options={options}/>
       </div>
-      <div className='flex px-4 pb-3 md:pb-0 md:hidden items-center justify-center duration-200'>
+      {/* <div className='flex px-4 pb-3 md:pb-0 md:hidden items-center justify-center duration-200'>
         <CustomSidebar options={options}/>
-      </div>
+      </div> */}
       <div className='md:pl-3 w-full h-full overflow-auto' id='scrollable-container'>
         {children}
       </div>

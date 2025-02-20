@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { LIMIT } from "@/constant";
+import { LIMIT, TIME_OUT_INTERVAL } from "@/constant";
 import api from "./api";
 import { jwtDecode } from "jwt-decode";
 
@@ -53,3 +53,43 @@ export const validateImageUrl = async ({ url, defaultUrl }: {url: string, defaul
 export const numbering = (page: number, index: number): number => {
   return (page - 1) * LIMIT + index + 1;
 }
+
+export const formatCurrencyMoney = (value: number): string => {
+  if (!value) return "0";
+  return new Intl.NumberFormat("vi-VN").format(value);
+};
+
+export const parseCurrencyMoney = (value: string): number => {
+  const num = value.replace(/\D/g, "");
+  return num === "" ? 0 : Number(num);
+};
+
+export const formatPercent = (value: number): string => {
+  return isNaN(value) ? "" : String(Math.round(value * 100));
+};
+
+export const parsePercent = (value: string): number => {
+  const num = parseFloat(value.replace(/[^\d.]/g, ""));
+  return isNaN(num) ? 0 : num / 100;
+};
+
+export const parseMultiplicationRate = (value: number, price: number): number => {
+  return Math.round(price * value / 100); 
+}
+
+export const toBase64 = (file: File) =>
+  new Promise<string>((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result as string);
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+
+export function isNewItem(createdDate: string, thresholdMinutes: number = TIME_OUT_INTERVAL): boolean {
+  const createdTime = new Date(createdDate).getTime();
+  const currentTime = Date.now();
+  const diffMinutes = (currentTime - createdTime) / (1000 * 60);
+    
+  return diffMinutes <= thresholdMinutes;
+}
+  

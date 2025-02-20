@@ -3,9 +3,11 @@
 import { 
   AccountProps, 
   ChangeForgotPasswordProps, 
-  ChangePasswordProps, 
+  ChangePasswordProps,
   CreateBannerProps, 
   CreateCategoriesProps, 
+  CreateColorProps, 
+  CreateProductProps, 
   ForgotPasswordProps, 
   LoginProps, 
   LogoutProps, 
@@ -14,6 +16,7 @@ import {
   StatisticalUsersProps, 
   UpdateBannerProps, 
   UpdateCategoriesProps, 
+  UploadImageProps, 
   UserProps, 
   VerifyOTPProps 
 } from ".";
@@ -60,6 +63,22 @@ export type BannersState = {
     currentPage: number;
   };
 };
+
+export type ProductsState = {
+  loading: boolean;
+  uploadImages: object;
+  newProduct: any | undefined;
+  pages: {
+    products: any | undefined;
+    totalProducts: number;
+    currentPage: number;
+  };
+}
+
+export type ColorsState = {
+  loading: boolean;
+  colors: any | undefined;
+}
 
 export type RegisterData = {
   data: RegisterProps;
@@ -178,6 +197,32 @@ export type UpdateBannerData = {
   setError: (error: any) => void;
   setSuccess: (success: any) => void;
 }
+
+export type CreateProductData = {
+  data: CreateProductProps;
+  setError: (error: any) => void;
+  setSuccess: (success: any) => void;
+}
+
+export type UploadImageData = {
+  data: UploadImageProps;
+  setError: (error: any) => void;
+  setSuccess: (success: any) => void;
+  updateImageProgress: (progress: any) => void;
+}
+
+export type CreateColorData = {
+  data: CreateColorProps;
+  setError: (error: any) => void;
+  setSuccess: (success: any) => void;
+}
+
+export type GetColorsData = {
+  setError: (error: any) => void;
+  setSuccess: (success: any) => void;
+}
+
+export type DeleteColorData = DeleteUserData;
 
 type ErrorResponse = {
   message: string;

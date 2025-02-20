@@ -121,6 +121,12 @@
       "placeholderConfirmNewPassword": "Re-enter your new password",
       "placeholderYourEmail": "Enter your email",
       "placeholderSelectRole": "Role user",
+      "placeholderZipCode": "Enter your Zip Code",
+      "placeholderPhone": "Enter your Phone",
+      "placeholderPrefecture": "Enter your Prefecture",
+      "placeholderCity": "Enter your City",
+      "placeholderStreet": "Enter your Street",
+      "placeholderBuilding": "Enter your Building",
       "labelSelectRole": "Active Role",
       "status": "Status",
       "active": "Active",
@@ -358,9 +364,86 @@
     },
     "products": {
       "title": "Products",
+      "add": "Add product",
+      "title_1": "Product Information",
+      "title_2": "Add product photo",
+      "addTitle": "Add new product",
+      "list": "List Products",
+      "listTitle": "List products",
+      "color": "Color code",
+      "color_title": "Select color code",
+      "color_label": "Selected color",
+      "size": "Size code",
+      "form": {
+        "name": "Name",
+        "code": "Code",
+        "price": "Price",
+        "quantity": "Quantity",
+        "quantity_alert": "Quantity Alert",
+        "order_unit": "Order Unit",
+        "description": "Description",
+        "status": "Status",
+        "multiplication_rate": "Multiplication Rate",
+        "discount": "Discount",
+        "selling_price": "Selling Price",
+        "placeholder": {
+          "name": "Enter product name",
+          "code": "Enter product code",
+          "price": "Enter product price",
+          "quantity": "Enter product quantity",
+          "quantity_alert": "Enter product quantity alert",
+          "order_unit": "Enter product order unit",
+          "description": "Enter product description",
+          "status": "Select product status",
+          "multiplication_rate": "Enter product multiplication rate",
+          "discount": "Enter product discount"
+        },
+        "enum": {
+          "0": "Out of business",
+          "1": "On sales",
+          "2": "Out of stock"
+        }
+      },
+      "button": {
+        "submit": "Submit",
+        "addNew": "Add new product",
+        "addColor": "Add new color"
+      },
       "success": {
         "title": "Success",
-        "description": "Product created successfully!"
+        "description": "Product created successfully!",
+        "description_1": "Color grading added successfully!",
+        "description_2": "Product updated successfully!",
+        "description_3": "Product deleted successfully!",
+        "description_4": "Get products successfully!",
+        "description_5": "Get colors successfully!"
+      },
+      "error": {
+        "title": "Error",
+        "description": "Failed to create product.",
+        "description_1": "Add product information before adding photos.",
+        "description_2": "Error in color grading.",
+        "description_3": "The browser does not support the Eyedropper API.",
+        "description_4": "Failed to create color.",
+        "description_5": "Failed to get list colors."
+      },
+      "actions": {
+        "title": "Actions",
+        "delete_color": "Delete color"
+      },
+      "delete": {
+        "title_color": "Delete color",
+        "cancel": "Cancel",
+        "delete": "Delete",
+        "confirm_color": "that color",
+        "error": {
+          "title": "Error",
+          "description": "Failed to delete color."
+        },
+        "success": {
+          "title": "Success",
+          "description": "Color deleted successfully."
+        }
       }
     },
     "shipping": {
@@ -380,6 +463,14 @@
   },
   "Search": {
     "placeholder": "Search..."
+  },
+  "Form": {
+    "label": {
+      "drag": "Click or drag and drop file to here"
+    },
+    "button": {
+      "submit": "Submit"
+    }
   },
   "Tables": {
     "filter": "Filter...",

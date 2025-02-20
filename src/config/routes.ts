@@ -12,6 +12,10 @@ const routes = {
     information: '/account/users/information',
     categories: '/account/categories',
     banners: '/account/banners',
+    products: '/account/products',
+    addProduct: '/account/add_product',
+    colorCode: '/account/color_code',
+    sizeCode: '/account/size_code',
   },
   protected: {
     google: '/auth/google/login'

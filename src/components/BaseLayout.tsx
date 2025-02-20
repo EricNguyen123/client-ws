@@ -27,8 +27,8 @@ export default async function BaseLayout({children, locale}: Props) {
 
   return (
     <StoreProvider>
-      <html className="h-full" lang={locale} suppressHydrationWarning>
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex h-full flex-col`}>
+      <html className="h-screen" lang={locale} suppressHydrationWarning>
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex h-full flex-col overflow-hidden`}>
             <ThemeProvider
               attribute="class"
               defaultTheme="light"

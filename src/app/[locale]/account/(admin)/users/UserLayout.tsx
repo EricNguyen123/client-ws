@@ -16,7 +16,7 @@ export default function UserLayout({
 }: BaseLayoutUsersProps) {
     const { id } = useParams();
     return (
-      <div className='w-full h-full flex flex-col items-start p-4'>
+      <div className='w-full h-max flex flex-col items-start p-4'>
         { !id && overview && statistical && <div className='w-full h-auto items-center grid grid-flow-row lg:grid-cols-10 gap-2 pb-20'>
           <div className='col-span-full lg:col-span-3 h-full'>{overview}</div>
           <div className='col-span-full lg:col-span-7 h-full'>{statistical}</div>

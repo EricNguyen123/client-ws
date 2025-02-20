@@ -35,6 +35,7 @@ import { Separator } from "@/components/ui/separator";
 import { FormAddBannerSchema, FormEditBannerSchema } from "@/schema-validations/valid.schema";
 import { useTranslations } from "next-intl";
 import numberOrder from "@/constant/number-order-banners";
+import { toBase64 } from "@/utils";
 
 export function FormBanners({ handle, handleSubmit, variant = "add", data }: { 
     handle?: () => void, 
@@ -99,14 +100,6 @@ export function FormBanners({ handle, handleSubmit, variant = "add", data }: {
                   if (variant === "edit") return;
                   const file = event.target.files?.[0];
                   if (file) {
-                    const toBase64 = (file: File) =>
-                      new Promise<string>((resolve, reject) => {
-                        const reader = new FileReader();
-                        reader.onload = () => resolve(reader.result as string);
-                        reader.onerror = reject;
-                        reader.readAsDataURL(file);
-                      });
-
                     const base64Url = await toBase64(file);
                     setPreview(base64Url);
                     field.onChange(file);

@@ -24,27 +24,33 @@ export default function EditAddress({ userSelector }: { userSelector: any }) {
       setOptionsAddress([
         {
           name: t('profile.zipcode'),
-          content: userSelector?.zipcode
+          content: userSelector?.zipcode,
+          placeholder: t('profile.placeholderZipCode'),
         },
         {
           name: t('profile.phone'),
-          content: userSelector?.phone
+          content: userSelector?.phone,
+          placeholder: t('profile.placeholderPhone'),
         },
         {
           name: t('profile.prefecture'),
-          content: userSelector?.prefecture
+          content: userSelector?.prefecture,
+          placeholder: t('profile.placeholderPrefecture'),
         },
         {
           name: t('profile.city'),
-          content: userSelector?.city
+          content: userSelector?.city,
+          placeholder: t('profile.placeholderCity'),
         },
         {
           name: t('profile.street'),
-          content: userSelector?.street
+          content: userSelector?.street,
+          placeholder: t('profile.placeholderStreet'),
         },
         {
           name: t('profile.building'),
-          content: userSelector?.building
+          content: userSelector?.building,
+          placeholder: t('profile.placeholderBuilding'),
         }
       ])
     }

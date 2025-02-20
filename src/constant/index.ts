@@ -1,5 +1,5 @@
 import images from "@/assets/images";
-import { RoleEnum } from "@/common/general";
+import { RoleEnum, StatusProductsEnum } from "@/common/general";
 
 export const symbols = {
   inValid: "_",
@@ -25,3 +25,11 @@ export const roles = [
 ]
 
 export const DEFAULT_IMAGE_URL = images.noImage.src;
+
+export const statusProducts = {
+  outOfBusiness: StatusProductsEnum.OutOfBusiness,
+  onSale: StatusProductsEnum.OnSale,
+  outOfStock: StatusProductsEnum.OutOfStock,
+}
+
+export const TIME_OUT_INTERVAL = 5;

@@ -3,7 +3,6 @@ import api from "@/utils/api"
 import { AxiosResponse } from "axios"
 
 export const createBannerApi = (data: { formData: FormData }): Promise<AxiosResponse> => {
-  console.log("data", data)
   return api.post("/banners", data.formData, {
     headers: {
       'Content-Type': 'multipart/form-data'
